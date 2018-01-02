@@ -6,6 +6,13 @@ import {Router} from 'express';
 
 const router = Router();
 
+import {Database} from 'sqlite3';
+
+const db = new Database('chain.sqlite3', (err) => {
+    if (err) console.log(err);
+});
+
+
 export default () => {
 
     router.route('/test').get(function (req, res, next) {

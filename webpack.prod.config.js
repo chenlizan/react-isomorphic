@@ -13,7 +13,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const clientConfig = {
     entry: {
         client: path.resolve(__dirname, 'client/index'),
-        vendor: ['babel-polyfill','react', 'react-dom', 'react-redux', 'react-router', 'redux', 'redux-persist', 'redux-thunk']
+        vendor: ['babel-polyfill', 'react', 'react-dom', 'react-redux', 'react-router', 'redux', 'redux-persist', 'redux-thunk']
     },
     output: {
         path: path.resolve(__dirname, 'dist/public'),
@@ -118,6 +118,9 @@ const serverConfig = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
         publicPath: '/'
+    },
+    externals: {
+        sqlite3: 'sqlite3',
     },
     module: {
         rules: [
