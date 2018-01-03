@@ -12,6 +12,9 @@ const db = new Database('chain.sqlite3', (err) => {
     if (err) console.log(err);
 });
 
+require.ensure([], require => {
+    require('./testEnsure')
+}, 'testEnsure');
 
 export default () => {
 

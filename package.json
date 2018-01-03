@@ -1,5 +1,5 @@
 {
-  "name": "yuan-isomorphic",
+  "name": "react-isomorphic",
   "version": "1.1.2",
   "description": "React Isomorphic",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "chenlizan",
   "license": "MIT",
   "dependencies": {
-    "antd": "^2.13.0",
+    "antd": "^3.1.0",
     "body-parser": "^1.18.0",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
@@ -36,17 +36,18 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.6",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "open-browser-webpack-plugin": "0.0.5",
     "progress-bar-webpack-plugin": "^1.10.0",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.6",
-    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-middleware": "^2.0.3",
     "webpack-hot-middleware": "^2.19.1"
   }
 }

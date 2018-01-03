@@ -6,6 +6,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -18,6 +19,7 @@ const clientConfig = {
     output: {
         path: path.resolve(__dirname, 'dist/public'),
         filename: '[name].js',
+        chunkFilename: '[name].[chunkhash:8].js',
         publicPath: '/'
     },
     module: {
@@ -99,6 +101,7 @@ const clientConfig = {
                 warnings: false
             }
         }),
+        new CleanWebpackPlugin(['public', 'views']),
         new ProgressBarPlugin()
     ],
     node: {
@@ -182,6 +185,7 @@ const serverConfig = {
                 warnings: false
             }
         }),
+        new CleanWebpackPlugin('dist/*.js'),
         new ProgressBarPlugin()
     ],
     node: {
