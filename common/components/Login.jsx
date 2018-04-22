@@ -3,7 +3,6 @@
  */
 
 import React from 'react';
-import CSSModules from 'react-css-modules'
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 
 const FormItem = Form.Item;

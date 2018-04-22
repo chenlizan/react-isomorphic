@@ -80,11 +80,11 @@ const clientConfig = {
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                NODE_ENV: JSON.stringify("development")
+                NODE_ENV: JSON.stringify('development')
             }
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin("styles.css"),
+        new ExtractTextPlugin('styles.css'),
         new OpenBrowserPlugin({url: 'http://localhost:3000', browser: 'chrome'}),
         new ProgressBarPlugin()
     ],

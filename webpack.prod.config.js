@@ -96,7 +96,7 @@ const clientConfig = {
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                NODE_ENV: JSON.stringify("production")
+                NODE_ENV: JSON.stringify('production')
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
@@ -107,7 +107,7 @@ const clientConfig = {
             filename: '../views/index.html',
             template: './server/views/tpl/index.html'
         }),
-        new ExtractTextPlugin("styles.css"),
+        new ExtractTextPlugin('[name].[contenthash:5].css'),
         new webpack.optimize.UglifyJsPlugin({
             uglifyOptions: {
                 ie8: true,
@@ -141,6 +141,7 @@ const serverConfig = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
+        chunkFilename: 'chunk.[chunkhash:5].js',
         filename: '[name].js',
         publicPath: '/'
     },
@@ -193,7 +194,7 @@ const serverConfig = {
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                NODE_ENV: JSON.stringify("production")
+                NODE_ENV: JSON.stringify('production')
             }
         }),
         new webpack.optimize.UglifyJsPlugin({
