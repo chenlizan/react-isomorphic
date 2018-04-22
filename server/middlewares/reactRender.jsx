@@ -11,8 +11,6 @@ import {routes} from '../../common/routes/index';
 import {configureStore} from '../../common/store/index';
 import Login from '../../common/reducers/Login';
 
-const index = (process.env.NODE_ENV === 'development') ? 'dev/index' : 'prod/index';
-
 const initState = fromJS({
     Login: Login.initState
 });

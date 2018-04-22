@@ -2,17 +2,16 @@
  * Created by chenlizan on 2017/7/22.
  */
 
+import {handleActions} from "redux-actions"
+
 const initState = {
     account: {}
 };
 
-const reducer = (state = initState, action = {}) => {
-    switch (action.type) {
-        case 'SAVE_LOGIN_INFO':
-            return {...state, account: action.account};
-        default:
-            return state;
-    }
-};
+const reducer = handleActions({
+    SAVE_LOGIN_INFO: (state, action) => ({
+        ...state, account: action.payload
+    })
+}, initState);
 
 export default {initState, reducer};

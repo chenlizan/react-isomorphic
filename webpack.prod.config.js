@@ -14,10 +14,11 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const clientConfig = {
     entry: {
         client: path.resolve(__dirname, 'client/index'),
-        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'redux']
+        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'redux', 'redux-actions']
     },
     output: {
         path: path.resolve(__dirname, 'dist/public'),
+        chunkFilename: 'chunk.[chunkhash:5].js',
         filename: '[name].js',
         publicPath: '/'
     },
