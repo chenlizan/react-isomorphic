@@ -14,12 +14,11 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const clientConfig = {
     entry: {
         client: path.resolve(__dirname, 'client/index'),
-        vendor: ['babel-polyfill', 'react', 'react-dom', 'react-redux', 'react-router', 'redux', 'redux-persist', 'redux-thunk']
+        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'redux']
     },
     output: {
         path: path.resolve(__dirname, 'dist/public'),
         filename: '[name].js',
-        chunkFilename: '[name].[chunkhash:8].js',
         publicPath: '/'
     },
     module: {
@@ -40,8 +39,10 @@ const clientConfig = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015', 'react', 'stage-0'],
-                        plugins: ['transform-object-assign']
+                        presets: ['env', 'es2015', 'react', 'stage-0'],
+                        plugins: [
+                            ['import', {'libraryName': 'antd', 'style': 'css'}]
+                        ]
                     }
                 }
             },
@@ -56,14 +57,34 @@ const clientConfig = {
             },
             {
                 test: /\.css$/,
+                exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [{
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true,
+                                modules: true,
+                                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                            }
                         }
-                    }]
+                    ]
+                })
+            },
+            {
+                test: /\.css$/,
+                include: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true
+                            }
+                        }
+                    ]
                 })
             }
         ]
@@ -143,22 +164,25 @@ const serverConfig = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015', 'react', 'stage-0'],
-                        plugins: ['transform-object-assign']
+                        presets: ['env', 'es2015', 'react', 'stage-0'],
+                        plugins: [
+                            ['import', {'libraryName': 'antd', 'style': 'css'}]
+                        ]
                     }
                 }
             },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [{
-                        loader: 'css-loader',
+                use: [
+                    {
+                        loader: 'css-loader/locals',
                         options: {
-                            minimize: true
+                            minimize: true,
+                            modules: true,
+                            localIdentName: '[path][name]__[local]--[hash:base64:5]'
                         }
-                    }]
-                })
+                    }
+                ]
             }
         ]
     },

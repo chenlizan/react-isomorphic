@@ -42,10 +42,7 @@ const clientConfig = {
                     options: {
                         presets: ['env', 'es2015', 'react', 'stage-0'],
                         plugins: [
-                            ['import', {
-                                'libraryName': 'antd',
-                                'style': 'css'
-                            }]
+                            ['import', {'libraryName': 'antd', 'style': 'css'}]
                         ]
                     }
                 }
@@ -55,13 +52,15 @@ const clientConfig = {
                 exclude: /node_modules/,
                 use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: [{
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                            }
                         }
-                    }]
+                    ]
                 }))
             },
             {

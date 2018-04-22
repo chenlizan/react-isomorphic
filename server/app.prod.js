@@ -31,7 +31,7 @@ const createApp = () => {
     const app = App();
     const port = process.env.PORT || 4000;
     app.listen(port, function () {
-        console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
+        console.info(`==>  ✈  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
     });
     return app;
 };
