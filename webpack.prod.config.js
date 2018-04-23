@@ -42,7 +42,10 @@ const clientConfig = {
                     options: {
                         presets: ['env', 'es2015', 'react', 'stage-0'],
                         plugins: [
-                            ['import', {'libraryName': 'antd', 'style': 'css'}]
+                            ['import', [
+                                {'libraryName': 'antd', 'style': 'css'},
+                                {'libraryName': 'antd-mobile', 'style': 'css'}
+                            ]],
                         ]
                     }
                 }
@@ -168,7 +171,10 @@ const serverConfig = {
                     options: {
                         presets: ['env', 'es2015', 'react', 'stage-0'],
                         plugins: [
-                            ['import', {'libraryName': 'antd', 'style': 'css'}]
+                            ['import', [
+                                {'libraryName': 'antd', 'style': 'css'},
+                                {'libraryName': 'antd-mobile', 'style': 'css'}
+                            ]],
                         ]
                     }
                 }

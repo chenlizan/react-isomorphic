@@ -3,7 +3,8 @@
  */
 
 import React from 'react';
-import {Form, Icon, Input, Button, Checkbox} from 'antd';
+import {Form, Icon, Input, Checkbox} from 'antd';
+import {Button} from 'antd-mobile';
 
 const FormItem = Form.Item;
 
