@@ -4,6 +4,7 @@
 
 import path from 'path'
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import express from 'express';
 import logger from 'morgan';
 import reactRender from './middlewares/reactRender';
@@ -20,6 +21,7 @@ const App = () => {
     app.use(logger('dev'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
+    app.use(compression());
     app.use(express.static(path.join(__dirname, '../public')));
     app.use(reactRender);
     app.use(routes());

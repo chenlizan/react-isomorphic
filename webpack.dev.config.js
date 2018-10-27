@@ -13,7 +13,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const clientConfig = {
     devtool: 'eval-source-map',
     entry: [
-        "babel-polyfill",
+        'babel-polyfill',
         path.resolve(__dirname, 'client/index'),
         'webpack-hot-middleware/client?path=/__what&timeout=2000&overlay=false&reload=true'
     ],

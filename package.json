@@ -10,11 +10,12 @@
   "author": "chenlizan",
   "license": "MIT",
   "dependencies": {
-    "antd": "^3.x.x",
-    "antd-mobile": "^2.x.x",
+    "antd": "^3.0.0",
+    "antd-mobile": "^2.0.0",
     "body-parser": "^1.18.0",
+    "compression": "^1.7.3",
     "ejs": "^2.5.7",
-    "express": "^4.x.x",
+    "express": "^4.0.0",
     "immutable": "^3.8.1",
     "morgan": "^1.8.2",
     "prop-types": "^15.5.10",
@@ -50,8 +51,8 @@
     "open-browser-webpack-plugin": "0.0.5",
     "progress-bar-webpack-plugin": "^1.10.0",
     "style-loader": "^0.21.0",
-    "webpack": "^3.x.x",
-    "webpack-dev-middleware": "^2.x.x",
+    "webpack": "^3.0.0",
+    "webpack-dev-middleware": "^2.0.0",
     "webpack-hot-middleware": "^2.19.1"
   }
 }
